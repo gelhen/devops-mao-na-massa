@@ -16,6 +16,7 @@ $sudo vagrant ssh
 
 
 
+
 arquivo provision
 
 #/bin/bash
