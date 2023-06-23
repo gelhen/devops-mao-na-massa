@@ -1,0 +1,43 @@
+antes de executar o comando vagrant.sh
+
+$sudo apt install qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils
+
+
+$sudo chmod 755 /tmp/
+sudo mkdir /tmp/vagrant-shell
+sudo chmod +x /tmp/vagrant-shell
+
+#dentro do diretorio
+$sudo vagrant up
+
+
+Para acessar a maquina
+$sudo vagrant ssh
+
+
+
+arquivo provision
+
+#/bin/bash
+#/usr/bin/env bash
+echo "Installing Apache and settings it up...."
+#apt-get install httpd > /dev/null 2>&1
+#consigui somente depois da vm instalada rodar sudo yom install httpd
+cp -r /vagrant/html/* /var/www/html
+#cp -r /vagrant/html /var/www/
+service httpd start
+#systemctl start httpd.service
+
+
+# privions certo
+#/bin/bash
+#/usr/bin/env bash
+echo "Installing Apache and settings it up...."
+yum install -y httpd > /dev/null 2>&1
+cp -r /vagrant/html/* /var/www/html/
+#cp -r /vagrant/html /var/www/
+service httpd start
+#systemctl start httpd.service
+
+
+
